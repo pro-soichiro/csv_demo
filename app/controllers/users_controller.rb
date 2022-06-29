@@ -20,7 +20,14 @@ class UsersController < ApplicationController
       header = %w(名前 スカウト 案件紹介 広告配信 メルマガ 運営連絡)
       csv << header
       users.each do |user|
-        values = [user.name,user.scout_email_notification,user.introduction_project_email,user.advertisement_delivery,user.email_magazine,user.contact_from_manager]
+        values = [
+          user.name,
+          user.scout_email_notification == true ? '受け取る' : 'NG',
+          user.introduction_project_email == true ? '受け取る' : 'NG',
+          user.advertisement_delivery == true ? '受け取る' : 'NG',
+          user.email_magazine == true ? '受け取る' : 'NG',
+          user.contact_from_manager == true ? '受け取る' : 'NG',
+        ]
         csv << values
       end
     end
