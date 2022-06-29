@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 参考
+slim導入
+https://qiita.com/ngron/items/c03e68642c2ab77e7283
 
-Things you may want to cover:
+seed
+https://qiita.com/ren0826jam/items/b589171502df87e40234
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+csv
+https://medium-company.com/csv-generate-rails/
