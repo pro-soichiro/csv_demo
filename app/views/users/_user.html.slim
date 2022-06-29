@@ -1,27 +1,10 @@
 | <div id="
 = dom_id user
-| "> 
-p
-  strong
-    | Name:
-  = user.name
-p
-  strong
-    | Scout email notification:
-  = user.scout_email_notification
-p
-  strong
-    | Introduction project email:
-  = user.introduction_project_email
-p
-  strong
-    | Advertisement delivery:
-  = user.advertisement_delivery
-p
-  strong
-    | Email magazine:
-  = user.email_magazine
-p
-  strong
-    | Contact from manager:
-  = user.contact_from_manager
+| ">
+tr
+  td = link_to user.name, user
+  td = user.scout_email_notification == true ? '受け取る' : 'NG'
+  td = user.introduction_project_email == true ? '受け取る' : 'NG'
+  td = user.advertisement_delivery == true ? '受け取る' : 'NG'
+  td = user.email_magazine == true ? '受け取る' : 'NG'
+  td = user.contact_from_manager == true ? '受け取る' : 'NG'

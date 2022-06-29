@@ -1,10 +1,19 @@
 p[style="color: green"]
   = notice
 h1
-  | Users
+  | メール受信設定
 #users
-  - @users.each do |user|
-    = render user
-    p
-      = link_to "Show this user", user
+table
+  thead
+    tr
+      th 氏名
+      th スカウト
+      th 案件紹介
+      th 広告配信
+      th メルマガ
+      th 運営連絡
+  tbody
+    - @users.each do |user|
+      = render user
+
 = link_to "New user", new_user_path
