@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       csv << header
       users.each do |user|
         values = [
-          user.id
+          user.id,
           user.name,
           user.scout_email_notification == true ? '受け取る' : 'NG',
           user.introduction_project_email == true ? '受け取る' : 'NG',
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
         csv << values
       end
     end
-    send_data(csv_data, filename: "users.csv")
+    send_data(csv_data, filename: "#{DateTime.now.strftime('%Y%m%d')}_user_mail_setings.csv")
   end
 
   # GET /users/1 or /users/1.json
