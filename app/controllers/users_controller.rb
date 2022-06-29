@@ -1,9 +1,30 @@
+require 'csv'
+
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
 
   # GET /users or /users.json
   def index
     @users = User.all
+
+    respond_to do |format|
+      format.html
+      format.csv do |csv|
+        send_users_csv(@users)
+      end
+    end
+  end
+
+  def send_users_csv(users)
+    csv_data = CSV.generate do |csv|
+      header = %w(名前 スカウト 案件紹介 広告配信 メルマガ 運営連絡)
+      csv << header
+      users.each do |user|
+        values = [user.name,user.scout_email_notification,user.introduction_project_email,user.advertisement_delivery,user.email_magazine,user.contact_from_manager]
+        csv << values
+      end
+    end
+    send_data(csv_data, filename: "users.csv")
   end
 
   # GET /users/1 or /users/1.json
