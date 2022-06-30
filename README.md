@@ -10,6 +10,9 @@ https://qiita.com/ren0826jam/items/b589171502df87e40234
 csv
 https://medium-company.com/csv-generate-rails/
 
+csv方法3種類
+https://tisnote.com/ruby-on-rails-csv/
+
 ## heroku deploy step
 herokuはinstall済みとする
 ### 参考
